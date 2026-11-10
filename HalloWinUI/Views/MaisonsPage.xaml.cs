@@ -1,4 +1,5 @@
 using HalloWinUI.Data;
+using HalloWinUI.ViewModels;
 using HalloWinUI.ViewModels.Pages;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -27,12 +28,15 @@ namespace HalloWinUI.Views
     {
        
         public MainMaisonsViewModel MaisonsViewModel { get; } = new MainMaisonsViewModel();
-        public MaisonViewModel MaisonViewModel { get; } = new MaisonViewModel();
+
+       
+        
         public MaisonsPage()
         {
             
             InitializeComponent();
             MaisonsViewModel.ChargerDonnees();
         }
+       
     }
 }

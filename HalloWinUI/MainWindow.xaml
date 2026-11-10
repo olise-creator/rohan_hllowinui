@@ -14,7 +14,7 @@
     <NavigationView 
     x:Name="NavView"
     AlwaysShowHeader="False"
-    PaneDisplayMode="Top" 
+    PaneDisplayMode="Left" 
     IsSettingsVisible="False"
     SelectionChanged="NavView_SelectionChanged"
     BackRequested="NavView_BackRequested">

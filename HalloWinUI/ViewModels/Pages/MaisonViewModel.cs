@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HalloWinUI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -87,7 +88,15 @@ namespace HalloWinUI.ViewModels.Pages
                 }
             }
         }
-
+        public MaisonViewModel(Maison maison)
+        {
+            _id = maison.Id;
+            _numeroCivique = maison.NumeroCivique;
+            _rue = maison.Rue;
+            _ville = maison.Ville;
+            _codePostal = maison.CodePostal;
+            _estSignalee = maison.EstSignalee;
+        }
 
 
 

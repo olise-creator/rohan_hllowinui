@@ -4,14 +4,25 @@ using System.Collections.ObjectModel;
 
 namespace HalloWinUI.ViewModels.Pages
 {
-    public class MainMaisonsViewModel
+    public class MainMaisonsViewModel:BaseViewModel
     {
 
         // commentaire
         private readonly IHalloweenDataProvider _dataProvider=new HalloweenDataProvider();
         public IHalloweenDataProvider dataProvider { get; }
+        private MaisonViewModel _MaisonSelectionne;
+        public MaisonViewModel MaisonVSelectionne
+        {
+            get => _MaisonSelectionne;
+            set
+            {
+                if (value != _MaisonSelectionne) ;
+                _MaisonSelectionne = value;
 
-        public ObservableCollection<Maison> Maisons { get; } = new ObservableCollection<Maison>();
+            }
+        }
+
+        public ObservableCollection<MaisonViewModel> Maisons { get; } = new() ;
 
         public MainMaisonsViewModel()
         {
@@ -23,10 +34,15 @@ namespace HalloWinUI.ViewModels.Pages
             Maisons.Clear();
             foreach (Maison maison in _dataProvider.GetMaisons())
             {
-                Maisons.Add(maison);
+                Maisons.Add(new MaisonViewModel(maison));
+
             }
 
         }
-
+        public void Supprimer()
+        {
+            Maisons.Remove(MaisonVSelectionne);
+            RaisePropertyChanged(Maisons);
+        }
     }
 }
