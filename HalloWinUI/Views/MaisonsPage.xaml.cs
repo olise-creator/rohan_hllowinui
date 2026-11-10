@@ -38,5 +38,9 @@ namespace HalloWinUI.Views
             MaisonsViewModel.ChargerDonnees();
         }
        
+        private void btn_AjouterEnfantClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(enfant),MaisonsViewModel.MaisonVSelectionne.Rue);
+        }
     }
 }

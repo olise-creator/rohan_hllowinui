@@ -33,7 +33,7 @@
             Content="Home"/>
 
             <NavigationViewItem 
-            Tag="DemoWinUI.Views.ListeClients" 
+            Tag="HalloWinui.ViewModels.Pages.enfant" 
             Content="Apps">
                 <!-- Utilisation d'une icône personnalisée -->
                 <NavigationViewItem.Icon>

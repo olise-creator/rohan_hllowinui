@@ -1,10 +1,11 @@
 ﻿using HalloWinUI.Data;
 using HalloWinUI.Models;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace HalloWinUI.ViewModels.Pages
 {
-    public class MainMaisonsViewModel:BaseViewModel
+    public class MainMaisonsViewModel:ValidableViewModel
     {
 
         // commentaire
@@ -18,6 +19,7 @@ namespace HalloWinUI.ViewModels.Pages
             {
                 if (value != _MaisonSelectionne) ;
                 _MaisonSelectionne = value;
+               
 
             }
         }
@@ -42,7 +44,8 @@ namespace HalloWinUI.ViewModels.Pages
         public void Supprimer()
         {
             Maisons.Remove(MaisonVSelectionne);
-            RaisePropertyChanged(Maisons);
+            
         }
+
     }
 }
