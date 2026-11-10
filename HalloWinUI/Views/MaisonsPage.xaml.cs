@@ -25,12 +25,14 @@ namespace HalloWinUI.Views
     /// </summary>
     public sealed partial class MaisonsPage : Page
     {
-        public MainMaisonsViewModel ViewModel { get; }
+       
+        public MainMaisonsViewModel MaisonsViewModel { get; } = new MainMaisonsViewModel();
+        public MaisonViewModel MaisonViewModel { get; } = new MaisonViewModel();
         public MaisonsPage()
         {
-            ViewModel = new MainMaisonsViewModel(new HalloweenDataProvider());
+            
             InitializeComponent();
-            ViewModel.ChargerDonnees();
+            MaisonsViewModel.ChargerDonnees();
         }
     }
 }

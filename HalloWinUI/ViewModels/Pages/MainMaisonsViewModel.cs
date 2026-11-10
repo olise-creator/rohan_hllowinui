@@ -8,13 +8,14 @@ namespace HalloWinUI.ViewModels.Pages
     {
 
         // commentaire
-        private readonly IHalloweenDataProvider _dataProvider;
+        private readonly IHalloweenDataProvider _dataProvider=new HalloweenDataProvider();
+        public IHalloweenDataProvider dataProvider { get; }
 
         public ObservableCollection<Maison> Maisons { get; } = new ObservableCollection<Maison>();
 
-        public MainMaisonsViewModel(IHalloweenDataProvider halloweenDataProvider)
+        public MainMaisonsViewModel()
         {
-            _dataProvider = halloweenDataProvider;
+            dataProvider=_dataProvider;
         }
 
         public void ChargerDonnees()

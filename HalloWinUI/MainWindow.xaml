@@ -10,5 +10,44 @@
     Title="HalloWinUI"
     mc:Ignorable="d">
 
-    <views:MaisonsPage />
+
+    <NavigationView 
+    x:Name="NavView"
+    AlwaysShowHeader="False"
+    PaneDisplayMode="Top" 
+    IsSettingsVisible="False"
+    SelectionChanged="NavView_SelectionChanged"
+    BackRequested="NavView_BackRequested">
+
+        <!-- Modifier l'espacement de l'entête -->
+        <NavigationView.Resources>
+            <Thickness x:Key="NavigationViewHeaderMargin">15 0</Thickness>
+        </NavigationView.Resources>
+
+        <NavigationView.MenuItems>
+            <!-- Utiliser le nom complet de la page dans la propriété Tag -->
+            <NavigationViewItem 
+            Tag="HalloWinUI.Views.MaisonsPage" 
+            Icon="Home" 
+            IsSelected="True"
+            Content="Home"/>
+
+            <NavigationViewItem 
+            Tag="DemoWinUI.Views.ListeClients" 
+            Content="Apps">
+                <!-- Utilisation d'une icône personnalisée -->
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xEB3C;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+        </NavigationView.MenuItems>
+
+        <!--  Contiendra les pages  -->
+        <Frame
+        x:Name="ContentFrame"
+        Navigated="ContentFrame_Navigated"
+        NavigationFailed="ContentFrame_NavigationFailed" />
+    </NavigationView>
+
 </Window>
