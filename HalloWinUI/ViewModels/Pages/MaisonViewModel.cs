@@ -8,6 +8,7 @@ namespace HalloWinUI.ViewModels.Pages
 {
     public class MaisonViewModel:BaseViewModel
     {
+
         private int _id;
         public int Id {
             get  =>_id; 
